@@ -6,7 +6,7 @@ function App() {
 
   const [linea1, setLinea1]= useState('');
   const [linea2, setLinea2]= useState('');
-  const [imagen, setImagen]= useState('');
+  const [imagen, setImagen]= useState('fire');
 
   const onChangeLinea1 = (evento) =>{
     setLinea1(evento.target.value);
@@ -20,15 +20,15 @@ function App() {
   };
 
   const onClickExportar = (evento) => {
-    alert('exporar');
+
       html2canvas(document.querySelector("#meme")).then(canvas => {
       let img  = canvas.toDataURL("image/png");
-      
-      var link = document.createElement('a');
+      let link = document.createElement('a');
       link.download = 'filename.png';
       link.href = img;
       link.click();
     });
+
   };
 
   return (
